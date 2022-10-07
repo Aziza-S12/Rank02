@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putstr.c                                           :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadritd <asadritd@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 17:50:25 by asadritd          #+#    #+#             */
-/*   Updated: 2022/10/07 18:07:22 by asadritd         ###   ########.fr       */
+/*   Created: 2022/10/07 18:07:56 by asadritd          #+#    #+#             */
+/*   Updated: 2022/10/07 18:23:35 by asadritd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
-//func displays a string on the standard output. The pointer passed to the funct
-//contains the &add of str's first char
+#include <string.h>
+//reproduce the behavior of the func strcpy
+//s1 = dest, s2 = src. Func copies the string src to dst (including '\0' char)
 
-void	ft_putstr(char *str)
+char	*ft_strcpy(char *s1, char *s2)
 {
-	int	i = -1;
-	
-	while(str[i++])
-		write(1, &str[i], 1);
+	int i = 0; 
+
+	while (s2[i] != '\0')
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	s1[i] = '\0';
+	return(s2);
 }
 
 int main()
 {
-	char *a = "Meteora";
-	ft_putstr(a);
+	char str1[20] = "Hey there";
+	char str2[20] = "move it";
 	
-	return (0);
+	ft_strcpy(str1, str2);
+	printf("after strcpy: %s\n", str1);
+
+	return 0;
 }

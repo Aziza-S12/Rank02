@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putstr.c                                           :+:      :+:    :+:   */
+/*   train.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadritd <asadritd@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 17:50:25 by asadritd          #+#    #+#             */
-/*   Updated: 2022/10/07 18:07:22 by asadritd         ###   ########.fr       */
+/*   Created: 2022/10/07 18:24:32 by asadritd          #+#    #+#             */
+/*   Updated: 2022/10/07 18:27:57 by asadritd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
-//func displays a string on the standard output. The pointer passed to the funct
-//contains the &add of str's first char
 
-void	ft_putstr(char *str)
+char	*f_strcpy(char *str1, char *str2)
 {
-	int	i = -1;
-	
-	while(str[i++])
-		write(1, &str[i], 1);
+	int i = 0;
+
+	while (str2[i] != '\0')
+	{
+		str1[i] = str2[i];
+		i++; 
+	}
+	str1[i] = '\0';
+	return (str1);
 }
 
 int main()
 {
-	char *a = "Meteora";
-	ft_putstr(a);
+	char str1[20] = "Hey there";
+	char str2[20] = "move it";
 	
-	return (0);
+	f_strcpy(str1, str2);
+	printf("after strcpy: %s\n", str1);
+
+	return 0;
 }
