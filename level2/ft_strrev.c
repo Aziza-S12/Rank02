@@ -1,18 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_bits.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asadritd <asadritd@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 17:35:15 by asadritd          #+#    #+#             */
-/*   Updated: 2022/11/04 16:05:37 by asadritd         ###   ########.fr       */
+/*   Created: 2022/11/04 16:16:30 by asadritd          #+#    #+#             */
+/*   Updated: 2022/11/04 16:25:49 by asadritd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*funct that  takes a byte, swaps its halves and returns the result*/
+/*funct that reverses (in-place) a string. It must return its parameter.*/
+#include <stdio.h>
 
-unsigned char	swap_bits(unsigned char octet)
+char	*ft_strrev(char *str)
 {
-	return((octet >> 4) || (octet << 4));
+	int		i = -1;
+	int		length = 0;
+	char	temp = str[i];
+
+	while (str[length])
+		length++;
+	while (++i < --length)
+	{
+		str[i] = str[length];
+		str[length] = temp;
+	}
+	return(str);
+}
+
+int main()
+{
+	char str[] = "heythere";
+	
+	ft_strrev(str);
+	printf("rev is:%s\n", str);
+	return(0);
 }
