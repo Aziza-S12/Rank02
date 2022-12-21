@@ -6,42 +6,55 @@
 /*   By: asadritd <asadritd@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 00:11:09 by asadritd          #+#    #+#             */
-/*   Updated: 2022/12/06 00:18:14 by asadritd         ###   ########.fr       */
+/*   Updated: 2022/12/21 20:34:36 by asadritd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-int *ft_rrange(int start, int end)
+int ft_abs (int nb)
 {
-    int *range;
-    int i = 0;
-    int n = end - start + 1;
+	if (nb < 0)
+	{
+		nb = -nb;
+	}
+	return nb;
+}
 
-    if (start > end)
-        return (ft_rrange(end, start));
-    range = (int *)malloc(sizeof(int) * n);
-    if (range)
-    {
-        while (i < n)
-        {
-            range[i] = start;
-            start++;
-            i++;
-        }
-    }
-    return (range);
+int     *ft_rrange(int start, int end)
+{
+	int *array;
+	int i = 0;
+	int n = end - start + 1;
+
+	array = (int *)malloc(sizeof(int) * n);
+	
+	while (end > start)
+	{
+		array[i] = end;
+		i++;
+		end--;
+	}
+	array[i] = start;
+	while (end < start)
+	{
+		array[i] = end;
+		i++;
+		end++;
+	}
+	array[i] = start;
+	return (array);
 }
 
 int main ()
 {
-	int start = -4;
-	int end = 1;
+	int start = -1;
+	int end = 2;
 	int *arr;
 	int i;
 
-	arr = ft_rrange (start, end);
+	arr = ft_rrange(start, end);
 	i = 0;
 
 	while (i < (end - start) + 1)
