@@ -6,10 +6,18 @@
 /*   By: asadritd <asadritd@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:49:22 by asadritd          #+#    #+#             */
-/*   Updated: 2022/12/28 17:31:39 by asadritd         ###   ########.fr       */
+/*   Updated: 2022/12/28 17:33:46 by asadritd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*Write a function that converts the string argument str (base N <= 16)
+to an integer (base 10) and returns it.
+The characters recognized in the input are: 0123456789abcdef
+Those are, of course, to be trimmed according to the requested base. For
+example, base 4 recognizes "0123" and base 16 recognizes "0123456789abcdef".
+Uppercase letters must also be recognized: "12fdb3" is the same as "12FDB3".
+Minus signs ('-') are interpreted only if they are the first character of the
+string.*/
 char    to_lower(char c)
 {
     if (c >= 'A' && c <= 'Z')
