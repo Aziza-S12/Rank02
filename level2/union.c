@@ -6,7 +6,7 @@
 /*   By: asadritd <asadritd@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:49:46 by asadritd          #+#    #+#             */
-/*   Updated: 2022/11/02 18:00:05 by asadritd         ###   ########.fr       */
+/*   Updated: 2022/12/22 11:55:44 by asadritd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 			i++;
 		while(argv[2][j] != '\0')
 		{
-			argv[1][i] = argv[2][j];
+			(argv[1][i] == argv[2][j]);
 			i++;
 			j++;
 		}

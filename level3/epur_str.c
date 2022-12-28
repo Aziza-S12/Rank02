@@ -6,7 +6,7 @@
 /*   By: asadritd <asadritd@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:49:35 by asadritd          #+#    #+#             */
-/*   Updated: 2022/12/21 19:35:22 by asadritd         ###   ########.fr       */
+/*   Updated: 2022/12/22 08:32:33 by asadritd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ program displays \n*/
 int main(int argc, char **argv)
 {
     int i;
-    int flg;
+    int flag;
 
     if (argc == 2)
     {
@@ -29,12 +29,12 @@ int main(int argc, char **argv)
         while (argv[1][i])
         {
             if (argv[1][i] == ' ' || argv[1][i] == '\t')
-                flg = 1;
+                flag = 1;
             if (!(argv[1][i] == ' ' || argv[1][i] == '\t'))
             {
-                if (flg)
-                    write (1, " ", 1);
-                flg = 0;
+                if (flag)
+                    write(1, " ", 1);
+                flag = 0;
                 write(1, &argv[1][i], 1);
             }
             i++;

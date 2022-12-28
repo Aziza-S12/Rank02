@@ -6,12 +6,22 @@
 /*   By: asadritd <asadritd@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:49:40 by asadritd          #+#    #+#             */
-/*   Updated: 2022/12/21 19:27:25 by asadritd         ###   ########.fr       */
+/*   Updated: 2022/12/28 15:35:33 by asadritd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
+/*Write a program that takes a positive integer as argument and displays the sum
+of all prime numbers inferior or equal to it followed by a newline.
+If the number of arguments is not 1, or the argument is not a positive number,
+just display 0 followed by a newline.
+Examples:
+$>./add_prime_sum 5
+10
+$>./add_prime_sum 7 | cat -e
+17$*/
 
 // void	ft_putnbr(int n, int fd)
 // {
@@ -92,7 +102,7 @@ int is_prime(int num)
 int main(int argc, char *argv[])
 {
     int sum = 0;
-    int nb = ft_atoi(argv[1]);
+    int nb = ft_atoi(argv[1]); 
 
     if (argc == 2)
     {

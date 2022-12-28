@@ -6,7 +6,7 @@
 /*   By: asadritd <asadritd@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:49:22 by asadritd          #+#    #+#             */
-/*   Updated: 2022/12/05 23:49:24 by asadritd         ###   ########.fr       */
+/*   Updated: 2022/12/28 17:31:39 by asadritd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,50 @@ int ft_atoi_base(const char *str, int str_base)
         ++str;
     }
     return(result);
+}
+
+int	ft_atoi_base(const char *str, int str_base)
+{
+	int i;
+	int result;
+	int sign;
+
+	i = 0;
+	result = 0;
+	sign = 1;
+	if (str[i] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+	while (str[i] != '\0')
+	{
+		result = result * str_base;
+		if (str[i] >= '0' && str[i] <= '9')
+		{
+			result = result + str[i] - '0';
+		}
+		else if (str[i] >= 'a' && str[i] <= 'f')
+		{
+			result = result + str[i] - 87;
+		}
+		else if (str[i] >= 'A' && str[i] <= 'F')
+		{
+			result = result + str[i] - 55;
+		}
+		i++;
+	}
+	result = result * sign;
+	return (result);
+}
+
+int main()
+{
+	const char *str = "0123abFc";
+	int num = 0;
+	int base = 9;
+
+	num =ft_atoi_base(str, base);
+	printf("num:%d\n", num);
+	return (0);
 }
